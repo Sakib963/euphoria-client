@@ -1,53 +1,55 @@
+import CartIcon from "../../../assets/icons/CartIcon";
+import HeartIcon from "../../../assets/icons/HeartIcon";
+import LoginIcon from "../../../assets/icons/LoginIcon";
+import SearchIcon from "../../../assets/icons/SearchIcon";
 import logo from "../../../assets/images/euphoria-logo.svg";
 
 const Navbar = () => {
   const navOptions = (
     <>
       <li>
-        <a>Item 1</a>
+        <a>Shop</a>
       </li>
       <li>
-        <a>Parent</a>
+        <a>Men</a>
       </li>
       <li>
-        <a>Item 3</a>
+        <a>Women</a>
+      </li>
+      <li>
+        <a>Combos</a>
+      </li>
+      <li>
+        <a>Jaggers</a>
       </li>
     </>
   );
   return (
-    <div className="navbar bg-base-100 text-black">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            {navOptions}
-          </ul>
+    <div className="flex items-center justify-between lg:px-20 lg:py-8 bg-[#FFFFFF] text-black">
+      <div>
+        <img src={logo} alt="logo" />
+      </div>
+      <div>
+        <ul className="flex gap-4 text-base">{navOptions}</ul>
+      </div>
+      <div className="flex justify-between items-center gap-14">
+        <form className="flex items-center flex-row-reverse bg-[#F6F6F6] gap-3 py-2 px-5 rounded-lg">
+          <input className="bg-[#F6F6F6] outline-none" type="text" name="search" />
+          <button type="submit">
+            <SearchIcon></SearchIcon>
+          </button>
+        </form>
+        <div className="flex items-center gap-2">
+          <div className="p-3 bg-[#F6F6F6] rounded-lg cursor-pointer">
+            <HeartIcon></HeartIcon>
+          </div>
+          <div className="p-3 bg-[#F6F6F6] rounded-lg cursor-pointer">
+            <LoginIcon></LoginIcon>
+          </div>
+          <div className="p-3 bg-[#F6F6F6] rounded-lg cursor-pointer">
+            <CartIcon></CartIcon>
+          </div>
         </div>
-        <img src={logo} alt="Euphoria Logo" />
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Click</a>
       </div>
     </div>
   );
