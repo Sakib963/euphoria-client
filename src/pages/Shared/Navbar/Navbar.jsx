@@ -47,7 +47,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="flex items-center justify-between px-4 py-2 lg:px-20 lg:py-8 bg-[#FFFFFF] text-black">
+    <div className="flex items-center justify-between px-4 py-2 lg:px-20 lg:py-4 bg-[#FFFFFF] text-black fixed left-0 right-0">
       <img className="w-16 lg:w-[90px] mr-4" src={logo} alt="logo" />
       <ul className="hidden md:flex gap-4 text-gray cursor-pointer text-xs lg:text-sm">
         {navOptions}
@@ -75,7 +75,7 @@ const Navbar = () => {
           <div
             className={`${
               menu ? "fixed" : "hidden"
-            } right-4 top-[60px] bg-[#F6F6F6] p-4 rounded-lg`}
+            } right-4 top-[60px] bg-[#F6F6F6] p-4 rounded-lg shadow-lg`}
           >
             <ul className="flex md:hidden flex-col gap-4 text-gray cursor-pointer text-xs lg:text-sm text-center mb-4">
               {navOptions}
