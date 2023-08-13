@@ -47,7 +47,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="flex items-center justify-between px-4 py-2 lg:px-20 lg:py-4 bg-[#FFFFFF] text-black fixed left-0 right-0">
+    <nav className="flex items-center justify-between px-4 py-2 lg:px-20 lg:py-4 bg-[#FFFFFF] text-black fixed left-0 right-0">
       <img className="w-16 lg:w-[90px] mr-4" src={logo} alt="logo" />
       <ul className="hidden md:flex gap-4 text-gray cursor-pointer text-xs lg:text-sm">
         {navOptions}
@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
