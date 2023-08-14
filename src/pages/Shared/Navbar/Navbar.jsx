@@ -1,55 +1,90 @@
+import CartIcon from "../../../assets/icons/CartIcon";
+import CloseIcon from "../../../assets/icons/CloseIcon";
+import HamburgerIcon from "../../../assets/icons/HamburgerIcon";
+import HeartIcon from "../../../assets/icons/HeartIcon";
+import LoginIcon from "../../../assets/icons/LoginIcon";
+import SearchIcon from "../../../assets/icons/SearchIcon";
 import logo from "../../../assets/images/euphoria-logo.svg";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menu, setMenu] = useState(false);
+  const searchKey = (event) =>{
+    event.preventDefault();
+    console.log(event.target.search.value);
+  }
   const navOptions = (
     <>
-      <li>
-        <a>Item 1</a>
+      <li className="hover:text-black">
+        <a>Shop</a>
       </li>
-      <li>
-        <a>Parent</a>
+      <li className="hover:text-black">
+        <a>Men</a>
       </li>
-      <li>
-        <a>Item 3</a>
+      <li className="hover:text-black">
+        <a>Women</a>
+      </li>
+      <li className="hover:text-black">
+        <a>Combos</a>
+      </li>
+      <li className="hover:text-black">
+        <a>Jaggers</a>
       </li>
     </>
   );
+
+  const navButtons = (
+    <>
+      <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
+        <HeartIcon></HeartIcon>
+      </div>
+      <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
+        <LoginIcon></LoginIcon>
+      </div>
+      <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
+        <CartIcon></CartIcon>
+      </div>
+    </>
+  );
   return (
-    <div className="navbar bg-base-100 text-black">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+    <nav className="flex items-center justify-between px-4 py-2 lg:px-20 lg:py-4 bg-[#FFFFFF] text-black fixed left-0 right-0">
+      <img className="w-16 lg:w-[90px] mr-4" src={logo} alt="logo" />
+      <ul className="hidden md:flex gap-4 text-gray cursor-pointer text-xs lg:text-sm">
+        {navOptions}
+      </ul>
+      <div className="flex justify-between items-center gap-8">
+        <form onSubmit={searchKey} className="flex items-center flex-row-reverse bg-[#F6F6F6] gap-3 py-2 px-2 lg:px-5 rounded-lg">
+          <input
+            className="bg-[#F6F6F6] w-32 lg:w-48 outline-none"
+            type="text"
+            name="search"
+          />
+          <button type="submit">
+            <SearchIcon></SearchIcon>
+          </button>
+        </form>
+        <div className="hidden lg:flex items-center gap-2">{navButtons}</div>
+        <div
+          onClick={() => {
+            setMenu(!menu);
+          }}
+          className="block lg:hidden p-2 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer"
+        >
+          {menu ? <CloseIcon></CloseIcon> : <HamburgerIcon></HamburgerIcon>}
+          {/* hamburger expand */}
+          <div
+            className={`${
+              menu ? "fixed" : "hidden"
+            } right-4 top-[60px] bg-[#F6F6F6] p-4 rounded-lg shadow-lg`}
           >
-            {navOptions}
-          </ul>
+            <ul className="flex md:hidden flex-col gap-4 text-gray cursor-pointer text-xs lg:text-sm text-center mb-4">
+              {navOptions}
+            </ul>
+            <div className="flex gap-2">{navButtons}</div>
+          </div>
         </div>
-        <img src={logo} alt="Euphoria Logo" />
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
-      </div>
-    </div>
+    </nav>
   );
 };
 
