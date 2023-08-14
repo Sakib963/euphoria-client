@@ -1,0 +1,12 @@
+.slider-animation {
+    animation: slideAnimation 1s ease-in-out; /* Adjust the duration as needed */
+  }
+
+@keyframes slideAnimation {
+    0% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
