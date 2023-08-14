@@ -73,7 +73,7 @@ const Slider = ({ slides }) => {
           <span
             key={index}
             className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? "bg-purple" : "bg-black"
+              index === currentSlide ? "bg-[#002482]" : "bg-[#c4c4c4]"
             }`}
             onClick={() => handleDotClick(index)}
           ></span>
