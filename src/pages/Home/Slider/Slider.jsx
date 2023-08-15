@@ -33,7 +33,7 @@ const Slider = ({ slides }) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row">
+      <div className="flex flex-col-reverse md:flex-row md:max-h-[500px]">
         <img
           className={`w-full md:w-1/2 h-auto ${
             animateSlide ? "slider-animation" : ""
