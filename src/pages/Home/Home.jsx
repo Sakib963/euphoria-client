@@ -1,4 +1,5 @@
 import InviteFriends from "./InviteFriends/InviteFriends";
+import NewArrival from "./NewArrival/NewArrival";
 import Slider from "./Slider/Slider";
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
         <div>
             <InviteFriends></InviteFriends>
             <Slider slides={bannerSlides}></Slider>
+            <NewArrival/>
         </div>
     );
 };
