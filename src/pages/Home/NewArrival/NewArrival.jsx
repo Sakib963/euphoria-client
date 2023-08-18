@@ -1,4 +1,4 @@
-import LeftBorder from "../../../assets/icons/LeftBorder";
+import Heading from "../../Shared/Heading/Heading";
 import "./NewArrival.css";
 
 const NewArrival = () => {
@@ -48,9 +48,7 @@ const NewArrival = () => {
 
   return (
     <div className="px-4 lg:px-10">
-      <h2 className="text-xl lg:text-3xl font-bold text-black flex items-center gap-4">
-        <LeftBorder /> New Arrival
-      </h2>
+      <Heading title={"New Arrival"}/>
       <div className="grid grid-flow-col gap-6 lg:gap-10 overflow-x-auto py-10 new-arrivals-overflow">
         {newArrivals.map((category) => (
           <div key={category.id} className="w-[260px] space-y-3">

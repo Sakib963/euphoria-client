@@ -1,6 +1,7 @@
 import InviteFriends from "./InviteFriends/InviteFriends";
 import NewArrival from "./NewArrival/NewArrival";
 import Slider from "./Slider/Slider";
+import TrendingOffers from "./TrendingOffers/TrendingOffers";
 
 const Home = () => {
     const bannerSlides = [
@@ -30,6 +31,7 @@ const Home = () => {
         <div>
             <InviteFriends></InviteFriends>
             <Slider slides={bannerSlides}></Slider>
+            <TrendingOffers></TrendingOffers>
             <NewArrival/>
         </div>
     );
