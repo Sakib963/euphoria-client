@@ -1,3 +1,4 @@
+import Gallery from "./Gallery/Gallery";
 import InviteFriends from "./InviteFriends/InviteFriends";
 import NewArrival from "./NewArrival/NewArrival";
 import Slider from "./Slider/Slider";
@@ -33,6 +34,7 @@ const Home = () => {
             <Slider slides={bannerSlides}></Slider>
             <TrendingOffers></TrendingOffers>
             <NewArrival/>
+            <Gallery></Gallery>
         </div>
     );
 };

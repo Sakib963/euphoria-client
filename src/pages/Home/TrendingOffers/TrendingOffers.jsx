@@ -26,22 +26,26 @@ const TrendingOffers = () => {
         {trendingOffers.map((offer) => (
           <div
             key={offer.id}
-            className="relative flex flex-col justify-between text-white rounded-lg shadow-md"
+            className="relative overflow-hidden flex flex-col justify-between text-white rounded-lg shadow-md h-max"
           >
-            <img className="w-full" src={offer.image} alt="" />
+            <img
+              className="w-full transition-transform ease-in duration-500 transform hover:scale-110"
+              src={offer.image}
+              alt=""
+            />
             <div className="absolute inset-0 flex flex-col justify-center p-6 text-neutral-50">
-              <p className="drop-shadow-md font-extrabold text-sm lg:text-lg mb-6">
+              <p className="drop-shadow-md font-extrabold text-sm md:text-lg mb-2 lg:mb-6">
                 {offer.preTitle}
               </p>
               <div className="w-1/2">
-                <p className="drop-shadow-md break-words font-extrabold text-2xl lg:text-4xl mb-2">
+                <p className="drop-shadow-md break-words font-extrabold text-lg md:text-2xl lg:text-4xl mb-1 lg:mb-2">
                   {offer.title}
                 </p>
               </div>
-              <p className="drop-shadow-md font-medium text-xs lg:text-base mb-10">
+              <p className="drop-shadow-md font-medium text-xs md:text-base lg:text-base">
                 {offer.offer}
               </p>
-              <button className="w-max mt-2 bg-[#8A33FD] p-3 rounded-lg shadow-lg">
+              <button className="w-max font-extrabold bg-[#8A33FD] transition-all ease-in duration-100 p-2 md:p-3 hover:p-4 rounded-lg shadow-lg mt-auto">
                 Shop Now
               </button>
             </div>

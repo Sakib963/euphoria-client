@@ -35,7 +35,7 @@ const Slider = ({ slides }) => {
     <>
       <div className="flex flex-col-reverse md:flex-row md:max-h-[500px]">
         <img
-          className={`w-full md:w-1/2 h-auto ${
+          className={`w-full md:w-1/2 h-auto max-h-[470px] ${
             animateSlide ? "slider-animation" : ""
           }`}
           src={slides[currentSlide].imgLeft}
@@ -73,7 +73,7 @@ const Slider = ({ slides }) => {
           <span
             key={index}
             className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? "bg-[#002482]" : "bg-[#c4c4c4]"
+              index === currentSlide ? "bg-[#8A33FD]" : "bg-[#c4c4c4]"
             }`}
             onClick={() => handleDotClick(index)}
           ></span>
