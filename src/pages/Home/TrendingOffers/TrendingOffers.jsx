@@ -1,4 +1,3 @@
-import React from "react";
 import Heading from "../../Shared/Heading/Heading";
 
 const trendingOffers = [
@@ -22,19 +21,19 @@ const TrendingOffers = () => {
   return (
     <div className="py-10 px-4 lg:px-10">
       <Heading title={"Trending Offers"} />
-      <div className="py-10 grid grid-cols-1 lg:grid-cols-2 gap-5 items-center justify-center">
+      <div className="py-10 grid grid-cols-1 lg:grid-cols-2 gap-5 items-center justify-center max-w-[1440px] mx-auto">
         {trendingOffers.map((offer) => (
           <div
             key={offer.id}
-            className="relative overflow-hidden flex flex-col justify-between text-white rounded-lg shadow-md h-max"
+            className="relative overflow-hidden flex flex-col justify-between text-white rounded-lg shadow-md h-max-[350px]"
           >
             <img
-              className="w-full transition-transform ease-in duration-500 transform hover:scale-110"
+              className="w-full max-h-[350px] transition-transform ease-in duration-500 transform hover:scale-110"
               src={offer.image}
               alt=""
             />
-            <div className="absolute inset-0 flex flex-col justify-center p-6 text-neutral-50">
-              <p className="drop-shadow-md font-extrabold text-sm md:text-lg mb-2 lg:mb-6">
+            <div className="absolute inset-0 flex flex-col justify-center p-6 text-neutral-50 max-h-[350px]">
+              <p className="drop-shadow-md font-extrabold text-sm md:text-lg mb-2 lg:mb-4">
                 {offer.preTitle}
               </p>
               <div className="w-1/2">
