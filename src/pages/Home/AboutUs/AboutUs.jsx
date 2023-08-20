@@ -24,7 +24,7 @@ const AboutUs = () => {
             cursus sed sodales molestie proin dictum gravida. Porttitor maecenas
           </p>
           <p className="mt-4 font-bold mb-4">Contact Information</p>
-          <p className="flex items-center gap-2"><span><CellIcon/></span> +880 1700 000 000</p>
+          <p className="flex items-center gap-2 mb-2"><span><CellIcon/></span> +880 1700 000 000</p>
           <p className="flex items-center gap-2"><span><GmailIcon/></span> xyz@gmail.com</p>
         </div>
         <div className="w-full lg:w-1/2">
