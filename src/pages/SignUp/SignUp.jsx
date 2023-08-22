@@ -12,11 +12,12 @@ const SignUp = () => {
   const [isPasswordValid, setIsPasswordValid] = useState(true);
 
   const handleForm = (event) => {
-    event.preventDefault();
-    const email = event.target.email.value;
+      event.preventDefault();
+      const username = event.target.username.value;
+      const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(email, password);
+    console.log(username, email, password);
   };
 
   const handlePasswordChange = (event) => {
@@ -125,7 +126,7 @@ const SignUp = () => {
             </p>
           )}
 
-          <p>
+          <p className="text-sm">
             <input
               className="mr-2 mb-4"
               required
@@ -135,7 +136,7 @@ const SignUp = () => {
             Agree to our <span className="underline">Terms</span> of use and{" "}
             <span className="underline">Privacy Policy</span>
           </p>
-          <p>
+          <p className="text-sm">
             <input className="mr-2 mb-8" type="checkbox" name="terms_policy" />
             Subscribe to our monthly newsletter
           </p>
