@@ -6,6 +6,7 @@ import LoginIcon from "../../../assets/icons/LoginIcon";
 import SearchIcon from "../../../assets/icons/SearchIcon";
 import logo from "../../../assets/images/euphoria-logo.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -38,9 +39,11 @@ const Navbar = () => {
       <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
         <HeartIcon></HeartIcon>
       </div>
+      <Link to="/login">
       <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
         <LoginIcon></LoginIcon>
       </div>
+      </Link>
       <div className="p-2 lg:p-3 bg-[#F6F6F6] hover:bg-[#F1F1F1] rounded-lg cursor-pointer">
         <CartIcon></CartIcon>
       </div>
