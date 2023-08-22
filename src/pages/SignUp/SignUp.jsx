@@ -2,7 +2,6 @@ import { useState } from "react";
 import GoogleIcon from "../../assets/icons/GoogleIcon";
 import HideIcon from "../../assets/icons/HIdeIcon";
 import TwitterIcon from "../../assets/icons/TwitterIcon";
-import LoginVector from "../../assets/vectors/LoginVector";
 import ShowIcon from "../../assets/icons/ShowIcon";
 import { Link } from "react-router-dom";
 import SignUpVector from "../../assets/vectors/SignUpVector";
