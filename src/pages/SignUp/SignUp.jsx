@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 import SignUpVector from "../../assets/vectors/SignUpVector";
 
 const SignUp = () => {
-    const [showPassword, setShowPassword] = useState(false);
-    const [password, setPassword] = useState("");
-    const [isPasswordValid, setIsPasswordValid] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -25,20 +25,26 @@ const SignUp = () => {
 
     const hasMinLength = newPassword.length >= 8;
     const hasNumber = /[0-9]/.test(newPassword);
-    const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-="']/.test(newPassword);
+    const hasSpecialChar = /[!@#$%^&*()_+{}[\]:;<>,.?~\\/\-="']/.test(
+      newPassword
+    );
     const hasUpperCase = /[A-Z]/.test(newPassword);
 
-    setIsPasswordValid(hasMinLength && hasNumber && hasSpecialChar && hasUpperCase);
+    setIsPasswordValid(
+      hasMinLength && hasNumber && hasSpecialChar && hasUpperCase
+    );
     setPassword(newPassword);
   };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1440px] mx-auto">
       <div className="order-2 lg:order-1 flex flex-col items-center justify-center w-full pl-5 lg:pl-10">
-        <SignUpVector width="100%"/>
+        <SignUpVector width="100%" />
       </div>
       <div className="order-1 lg:order-2 w-full p-5 lg:p-16">
         <h1 className="text-3xl font-semibold text-[#333] mb-2">Sign Up</h1>
-        <p className="text-sm text-[#33333380] mb-12">Sign Up for free access to our products</p>
+        <p className="text-sm text-[#33333380] mb-12">
+          Sign Up for free access to our products
+        </p>
         <button className="flex items-center justify-center gap-2 w-full md:w-1/2 mx-auto lg:w-full py-4 text-lg border-[1px] rounded-lg border-[#3C4242] mb-5">
           <GoogleIcon width={"24px"} />
           <p>Continue With Google</p>
@@ -103,13 +109,37 @@ const SignUp = () => {
             onChange={handlePasswordChange}
             required
           />
-          <p className={`mt-2 mb-7 text-xs ${isPasswordValid ? "text-[green]" : "text-[red]"}`}>
-            {isPasswordValid
-              ? "Password meets the criteria."
-              : "Password must have at least 8 characters, including 1 number, 1 special character, and 1 capital letter."}
-          </p>
+          {password.length === 0 ? (
+            <p className="mt-2 mb-7 text-xs">
+              Password must contain 8 characters including at least 1 special
+              character, 1 number, 1 capital letter, and 1 small letter.
+            </p>
+          ) : (
+            <p
+              className={`mt-2 mb-7 text-xs ${
+                isPasswordValid ? "text-[green]" : "text-[red]"
+              }`}
+            >
+              {isPasswordValid
+                ? "Password meets the criteria."
+                : "Password must have at least 8 characters, including 1 number, 1 special character, and 1 capital letter."}
+            </p>
+          )}
 
-          <p><input type="checkbox" name="" id="" />Agree to our <span className="underline">Terms</span> of use and <span className="underline">Privacy Policy</span></p>
+          <p>
+            <input
+              className="mr-2 mb-4"
+              required
+              type="checkbox"
+              name="terms_policy"
+            />
+            Agree to our <span className="underline">Terms</span> of use and{" "}
+            <span className="underline">Privacy Policy</span>
+          </p>
+          <p>
+            <input className="mr-2 mb-8" type="checkbox" name="terms_policy" />
+            Subscribe to our monthly newsletter
+          </p>
           <button
             className="bg-purple p-3 px-10 rounded-lg w-max text-[#fff] mb-3"
             type="submit"
@@ -117,9 +147,9 @@ const SignUp = () => {
             Sign In
           </button>
           <p className="mb-7 cursor-pointer">
-            Don&apos;t have an account?
-            <Link to="/signup" className="ml-2 underline">
-              Sign Up
+            Already have an account?
+            <Link to="/login" className="ml-2 underline">
+              Sign In
             </Link>
           </p>
         </form>
